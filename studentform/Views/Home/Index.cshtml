@@ -1,0 +1,191 @@
+﻿@*@{
+    ViewData["Title"] = "Home Page";
+}*@
+@model studentform.Models.Student
+
+@{
+
+ViewData["Title"] = "Registration";
+
+}
+<div class="card">
+    <div class="card-header bg-primary text-white text-uppercase">
+        <h4>Student Information</h4>
+</div>
+<div class="card-body">
+        <form asp-action="Index" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="Name" class="label-control"></label>
+                 <input asp-for="Name" class="form-control" /><span asp-validation-for="Name" class="text-danger"></span>
+         </div>
+</div>
+<div class="col-md-6">
+
+<div class="form-group">
+
+<label asp-for="Gender" class="label-control"></label>
+
+<input type="radio" asp-for="Gender" value="Male" class="label-control" /> Male
+
+<input type="radio" asp-for="Gender" value="Female" class="label-control" /> Female
+
+<span asp-validation-for="Gender" class="text-danger"></span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col-md-6">
+
+<div class="form-group">
+
+<label asp-for="DateofBirth" class="label-control"></label>
+
+<input asp-for="DateofBirth" class="form-control" />
+
+<span asp-validation-for="DateofBirth" class="text-danger"></span>
+
+</div>
+</div>
+
+<div class="col-md-6">
+
+<div class="form-group">
+
+<label asp-for="BatchTime" class="label-control"></label>
+
+<input asp-for="BatchTime" class="form-control" />
+
+<span asp-validation-for="BatchTime" class="text-danger"></span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col-md-4">
+
+<div class="form-group">
+
+<label asp-for="PhoneNumber" class="label-control"></label>
+
+<input asp-for="PhoneNumber" class="form-control" />
+
+<span asp-validation-for="PhoneNumber" class="text-danger"></span>
+
+</div>
+
+</div>
+
+<div class="col-md-4">
+
+<div class="form-group">
+<label asp-for="Email" class="label-control"></label>
+
+<input asp-for="Email" class="form-control" />
+
+<span asp-validation-for="Email" class="text-danger"></span>
+
+</div>
+</div>
+                
+
+<div class="col-md-4">
+
+<div class="form-group">
+
+<label asp-for="WebSite" class="label-control"></label>
+
+<input asp-for="WebSite" class="form-control" />
+
+<span asp-validation-for="WebSite" class="text-danger"></span>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="row">
+
+<div class="col-md-6">
+
+<div class="form-group">
+
+<label asp-for="Password" class="label-control"></label>
+
+<input asp-for="Password" class="form-control" />
+
+<span asp-validation-for="Password" class="text-danger"></span>
+
+</div>
+
+</div>
+
+<div class="col-md-6">
+
+<div class="form-group">
+<label asp-for="ConformPassword" class="label-control"></label>
+
+<input asp-for="ConformPassword" class="form-control" />
+
+<span asp-validation-for="ConformPassword" class="text-danger"></span>
+
+</div>
+
+</div>
+<div class="row-cols-lg-5">
+                <div class="col-md-4">
+
+                    <div class="form-group">
+                        <label asp-for="Emailid" class="label-control"></label>
+
+                        <input asp-for="Emailid" class="form-control" />
+
+                        <span asp-validation-for="Emailid" class="text-danger"></span>
+
+                    </div>
+                </div>
+                </div>
+</div>
+
+@*<div class="form-group">
+
+<button type="submit" class="btn btn-primary rounded-0">Submit</button>
+
+</div>*@
+            <div class="col-md-6">
+
+                <div class="form-group">
+
+            <div >
+                <input type="file" name="myfile" /multiple>
+                <input type="submit" />
+            
+            </div>
+            </div>
+            </div>
+
+</form>
+
+</div>
+
+
+</div>
+
+<!-- Activate JQuery Validation ->
+
+@section Scripts{
+
+@await Html.PartialAsync("/Views/Shared/_ValidationScriptsPartial.cshtml")
+
+}
